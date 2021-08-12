@@ -37,7 +37,7 @@ npm run electron:build:linux
 npm run electron:build:windows
 npm run electron:build:mac
 ```
-### Compiles publish desktop application
+### Compiles desktop application installer
 ```
 npm run electron:build:linux:publish
 npm run electron:build:windows:publish
