@@ -1,7 +1,14 @@
-# VueWPA
+# Vue Playground
 
 ## Project setup
 ```
+npm install
+```
+
+If you need to use an HTTP proxy.
+```
+export ELECTRON_GET_USE_PROXY=1
+export GLOBAL_AGENT_HTTPS_PROXY=http://proxy.address.here.com:8080
 npm install
 ```
 
@@ -23,6 +30,19 @@ npm run build
 Next, deploy `dist` directory on your web server.
 
 Finally, Access your web server using Web browser and install WPA application.
+
+### Compiles desktop application
+```
+npm run electron:build:linux
+npm run electron:build:windows
+npm run electron:build:mac
+```
+### Compiles publish desktop application
+```
+npm run electron:build:linux:publish
+npm run electron:build:windows:publish
+npm run electron:build:mac:publish
+```
 
 ### Run your unit tests
 ```
