@@ -1,16 +1,15 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <InputForm/>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import InputForm from './components/InputForm.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    HelloWorld
+    InputForm
   }
 });
 </script>
@@ -24,4 +23,24 @@ export default defineComponent({
   color: #2c3e50;
   margin-top: 60px;
 }
+
+/*** 外字 start ***/
+@font-face {
+  font-family: "EUDCFont";
+  /*
+  src: url("EUDC.woff2") format('woff2'),
+       url("EUDC.woff")  format('woff');
+  */
+  src: url("assets/fonts/EUDC.converted-woff-tools.woff") format('woff');
+}
+
+.EUDCFontClass {
+  font-family: "EUDCFont";
+}
+
+/* 全てのタグに外字を適応 */
+* {
+  font-family: "EUDCFont";
+}
+/*** 外字 end ***/
 </style>
