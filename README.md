@@ -1,4 +1,4 @@
-# hello-vue-pwa
+# VueWPA
 
 ## Project setup
 ```
