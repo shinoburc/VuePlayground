@@ -22,14 +22,14 @@ npm run serve
 npm run build
 ```
 
-### Compiles and minifies for WPA production
+### Compiles and minifies for PWA production
 ```
 npm run build
 ```
 
 Next, deploy `dist` directory on your web server.
 
-Finally, Access your web server using Web browser and install WPA application.
+Finally, Access your web server using Web browser and install PWA application.
 
 ### Compiles desktop application
 ```
