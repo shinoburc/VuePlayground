@@ -1,14 +1,17 @@
 <template>
+  <ApplicationHeader/>
   <InputForm/>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import InputForm from './components/InputForm.vue';
+import ApplicationHeader from './components/ApplicationHeader.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
+    ApplicationHeader,
     InputForm
   }
 });
