@@ -1,13 +1,33 @@
 <template>
-  <header>
-    <nav>
-      <h2>メニュー</h2>
-      <ul>
-        <li><a href=”#”>TOP</a></li>
-        <li><a href=”#”>ABOUT</a></li>
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="ナビゲーションの切替">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Vue Playground</a>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Menu1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Menu2</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" id="navbarDropdownMenuLink" aria-expanded="false">Dropdown Menu</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">DropdownItem1</a></li>
+            <li><a class="dropdown-item" href="#">DropdownItem2</a></li>
+            <li><a class="dropdown-item" href="#">DropdownItem3</a></li>
+          </ul>
+        </li>
       </ul>
-    </nav>
-  </header>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 </template>
 
 <script lang="ts">
