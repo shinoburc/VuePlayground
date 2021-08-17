@@ -4,17 +4,16 @@
     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="ナビゲーションの切替">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">Vue Playground</a>
+    <router-link to="/" class="navbar-brand">Vue Playground</router-link>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
+          <router-link to="/" class="nav-link">Home</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Menu1</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Menu2</a>
+          <!-- <a class="nav-link" href="#">Menu1</a> -->
+          <router-link to="/input_form" class="nav-link">InputForm</router-link>
         </li>
         <li class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" id="navbarDropdownMenuLink" aria-expanded="false">Dropdown Menu</a>
