@@ -1,16 +1,16 @@
 <template>
-  <ApplicationHeader/>
-  <router-view/>
+  <router-view name="application_header"/>
+  <router-view name="content"/>
+  <router-view name="application_footer"/>
+  <router-view name="printing"/>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import ApplicationHeader from './components/ApplicationHeader.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    ApplicationHeader
   }
 });
 </script>

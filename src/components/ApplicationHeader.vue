@@ -12,8 +12,11 @@
           <router-link to="/" class="nav-link">Home</router-link>
         </li>
         <li class="nav-item">
-          <!-- <a class="nav-link" href="#">Menu1</a> -->
           <router-link to="/input_form" class="nav-link">InputForm</router-link>
+        </li>
+        <li class="nav-item">
+          <!-- <router-link to="/printing" class="nav-link" target="_blank">Printing</router-link> -->
+          <router-link to="/printing" class="nav-link">Printing</router-link>
         </li>
         <li class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" id="navbarDropdownMenuLink" aria-expanded="false">Dropdown Menu</a>

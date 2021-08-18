@@ -1,10 +1,8 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-  </div>
+  <h1>Home</h1>
 </template>
 
-<script>
+<script lang="ts">
 
 export default {
   name: 'Home',
