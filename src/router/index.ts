@@ -26,7 +26,22 @@ const routes: Array<RouteRecordRaw> = [
     path: '/printing',
     name: 'Printing',
     components: {
+      application_header: ApplicationHeader,
       printing: import('../views/Printing.vue')
+    }
+  },
+  {
+    path: '/report_A4',
+    name: 'ReportA4',
+    components: {
+      printing: import('../reports/ReportA4.vue')
+    }
+  },
+  {
+    path: '/report_A4_Landscape',
+    name: 'ReportA4Landscape',
+    components: {
+      printing: import('../reports/ReportA4Landscape.vue')
     }
   }
 ]

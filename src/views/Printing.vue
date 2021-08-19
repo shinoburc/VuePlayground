@@ -1,12 +1,10 @@
 
 <template>
   <h1>Printing</h1>
-  <section class="sheet padding-10mm A4">
-    <h2>Page1</h2>
-  </section>
-  <section class="sheet padding-10mm A4">
-    <h2>Page2</h2>
-  </section>
+  <ul class="list-group">
+    <li class="list-group-item"><router-link to="/report_A4" target="_blank">A4</router-link></li>
+    <li class="list-group-item"><router-link to="/report_A4_Landscape" target="_blank">A4 Landscape</router-link></li>
+  </ul>
 </template>
 
 <script lang="ts">
@@ -18,5 +16,5 @@ export default {
 }
 </script>
 
-<style scoped src="../../node_modules/paper-css/paper.min.css">
+<style scoped>
 </style>
