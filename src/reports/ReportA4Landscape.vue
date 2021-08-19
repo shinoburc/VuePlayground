@@ -13,9 +13,13 @@
 export default {
   name: 'ReportA4Landscape',
   setup() {
-    /* set report paper size to A4 Landscape. */
+    /* set report paper size to A4 landscape for browser rendering. */
     document.body.classList.add('A4')
     document.body.classList.add('landscape')
+    /* set report paper size to A4 landscape for printer. */
+    const style = document.createElement('style');
+      style.innerHTML = `@page {size: A4 landscape}`;
+    document.head.appendChild(style);
   },
   components: {
   }

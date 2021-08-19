@@ -14,14 +14,14 @@
 <script lang="ts">
 
 export default {
-  name: 'ReportA4',
+  name: 'ReportA5',
   setup() {
 
     /* set report paper size to A4 for browser rendering. */
-    document.body.classList.add('A4')
+    document.body.classList.add('A5')
     /* set report paper size to A4 for printer. */
     const style = document.createElement('style');
-      style.innerHTML = `@page {size: A4}`;
+      style.innerHTML = `@page {size: A5}`;
     document.head.appendChild(style);
   },
   components: {

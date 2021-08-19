@@ -43,7 +43,14 @@ const routes: Array<RouteRecordRaw> = [
     components: {
       printing: import('../reports/ReportA4Landscape.vue')
     }
-  }
+  },
+  {
+    path: '/report_A5',
+    name: 'ReportA5',
+    components: {
+      printing: import('../reports/ReportA5.vue')
+    }
+  },
 ]
 
 const router = createRouter({
