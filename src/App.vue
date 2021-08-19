@@ -1,8 +1,10 @@
 <template>
-  <router-view name="application_header"/>
-  <router-view name="content"/>
-  <router-view name="application_footer"/>
-  <router-view name="printing"/>
+  <div id="app">
+    <router-view name="application_header"/>
+    <router-view name="content"/>
+    <router-view name="application_footer"/>
+    <router-view name="printing"/>
+  </div>
 </template>
 
 <script lang="ts">
@@ -22,7 +24,6 @@ export default defineComponent({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 /*** 外字 start ***/
