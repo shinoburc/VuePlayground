@@ -51,6 +51,13 @@ const routes: Array<RouteRecordRaw> = [
       printing: import('../reports/ReportA5.vue')
     }
   },
+  {
+    path: '/report_Invoice',
+    name: 'ReportInvoice',
+    components: {
+      printing: import('../reports/ReportInvoice.vue')
+    }
+  }
 ]
 
 const router = createRouter({

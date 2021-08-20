@@ -21,7 +21,7 @@ export default {
     document.body.classList.add('A4')
     /* set report paper size to A4 for printer. */
     const style = document.createElement('style');
-      style.innerHTML = `@page {size: A4}`;
+    style.innerHTML = `@page {size: A4}`;
     document.head.appendChild(style);
   },
   components: {
