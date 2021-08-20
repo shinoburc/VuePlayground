@@ -10,13 +10,13 @@
   <h1>Input Form</h1>
   <div id="v-model-basic">
     <div class="row">
-      <div class="col">
+      <div class="col border border-primary">
         <h2>input</h2>
         <input v-model="input_value" placeholder="edit me" class="form-control"/>
         <span >Value is: {{ input_value }}</span>
       </div>
 
-      <div class="col">
+      <div class="col border border-primary">
         <h2>textarea</h2>
         <textarea v-model="textarea_value" placeholder="edit me" class="form-control"/>
         <span>Value is: {{ textarea_value }}</span>
@@ -24,7 +24,7 @@
     </div>
 
     <div class="row">
-      <div class="col">
+      <div class="col border border-primary">
         <h2>checkbox</h2>
         <input type="checkbox" id="jack" value="Jack" v-model="checked_values" class="form-check-input"/>
         <label for="jack" class="form-check-label">Jack</label>
@@ -35,7 +35,7 @@
         <span>Value is: {{ checked_values }}</span>
       </div>
 
-      <div class="col">
+      <div class="col border border-primary">
         <h2>radio</h2>
         <input type="radio" id="woman" value="woman" v-model="radio_selected_value" class="form-check-input"/>
         <label for="woman"  class="form-check-label">Woman</label>
@@ -46,7 +46,7 @@
     </div>
 
     <div class="row">
-      <div class="col">
+      <div class="col border border-primary">
         <h2>select</h2>
         <select v-model="selected_values" multiple class="form-select">
           <option disabled value="">Please select one</option>
@@ -57,7 +57,7 @@
         <span>Value is: {{ selected_values }}</span>
       </div>
 
-      <div class="col">
+      <div class="col border border-primary">
         <h2>boolean</h2>
         <input type="checkbox" v-model="toggle" />
         <span>Value is: {{ toggle }}</span>
@@ -66,12 +66,12 @@
     </div>
 
     <div class="row">
-      <div class="col">
+      <div class="col border border-primary">
         <h2>外字</h2>
         <span >Value is: <span v-html="input_gaiji_value"></span></span>
       </div>
 
-      <div class="col">
+      <div class="col border border-primary">
         <h2>Button</h2>
         <button type="button" class="btn btn-primary">Primary</button>
         <button type="button" class="btn btn-secondary">Secondary</button>
@@ -80,7 +80,7 @@
     </div>
 
     <div class="row">
-      <div class="col">
+      <div class="col border border-primary">
         <h2>Range</h2>
         <label for="customRange1" class="form-label">Example range</label>
         <input type="range" v-model="range" class="form-range" id="customRange1">
