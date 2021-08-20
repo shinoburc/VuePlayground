@@ -7,4 +7,6 @@ import './registerServiceWorker'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 
-createApp(App).use(router).use(router).mount('#app')
+createApp(App)
+  .use(router)
+  .mount('#app')
