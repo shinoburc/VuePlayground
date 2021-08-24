@@ -32,30 +32,30 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/report_A4',
-    name: 'ReportA4',
+    name: 'A4',
     components: {
-      printing: import('../reports/ReportA4.vue')
+      printing: import('../reports/A4.vue')
     }
   },
   {
     path: '/report_A4_Landscape',
-    name: 'ReportA4Landscape',
+    name: 'A4Landscape',
     components: {
-      printing: import('../reports/ReportA4Landscape.vue')
+      printing: import('../reports/A4Landscape.vue')
     }
   },
   {
     path: '/report_A5',
-    name: 'ReportA5',
+    name: 'A5',
     components: {
-      printing: import('../reports/ReportA5.vue')
+      printing: import('../reports/A5.vue')
     }
   },
   {
     path: '/report_Invoice',
-    name: 'ReportInvoice',
+    name: 'Invoice',
     components: {
-      printing: import('../reports/ReportInvoice.vue')
+      printing: import('../reports/Invoice.vue')
     }
   }
 ]
