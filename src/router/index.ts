@@ -57,6 +57,13 @@ const routes: Array<RouteRecordRaw> = [
     components: {
       printing: import('../reports/Invoice.vue')
     }
+  },
+  {
+    path: '/report_Flexible',
+    name: 'Flexible',
+    components: {
+      printing: import('../reports/Flexible.vue')
+    }
   }
 ]
 
