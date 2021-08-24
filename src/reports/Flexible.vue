@@ -65,8 +65,8 @@
                         <td> {{ item.amount }} </td>
                         <td> {{ item.sub_total }} </td>
                     </tr>
-                    <tr v-for="dummy of (14 - contents.items.length)" :key="dummy" class="dataline">
-                        <td v-for="dummy_rows of (contents.headers.length - 1)" :key="dummy_rows"/>
+                    <tr v-for="dummy_rows of (14 - contents.items.length)" :key="dummy_rows" class="dataline">
+                        <td v-for="dummy_cols of (contents.headers.length - 1)" :key="dummy_cols"/>
                     </tr>
                     <tr>
                         <td class="space" rowspan="3" colspan="2"> </td>
