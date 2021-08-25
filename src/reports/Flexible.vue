@@ -43,7 +43,7 @@
                 <tbody>
                     <tr>
                         <th>合計金額</th>
-                        <td>\1,059,490</td>
+                        <td>\{{ contents.summary.total.toLocaleString() }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -61,25 +61,25 @@
                 <tbody>
                     <tr v-for="item in contents.items" :key="item.name" class="dataline">
                         <td class="text-left"> {{ item.name }}</td>
-                        <td> {{ item.unit_price }} </td>
+                        <td> {{ item.unit_price.toLocaleString() }} </td>
                         <td> {{ item.amount }} </td>
-                        <td> {{ item.sub_total }} </td>
+                        <td> {{ item.sub_total.toLocaleString() }} </td>
                     </tr>
                     <tr v-for="dummy_rows of (14 - contents.items.length)" :key="dummy_rows" class="dataline">
-                        <td v-for="dummy_cols of (contents.headers.length - 1)" :key="dummy_cols"/>
+                        <td v-for="dummy_cols of contents.headers.length" :key="dummy_cols"/>
                     </tr>
                     <tr>
                         <td class="space" rowspan="3" colspan="2"> </td>
                         <th> 小計 </th>
-                        <td> 1,049,000 </td>
+                        <td> {{ contents.summary.sub_total_sum.toLocaleString() }} </td>
                     </tr>
                     <tr>
                         <th> 消費税 </th>
-                        <td> 10,490 </td>
+                        <td> {{ contents.summary.tax.toLocaleString() }} </td>
                     </tr>
                     <tr>
                         <th> 合計 </th>
-                        <td> 1,059,490 </td>
+                        <td> {{ contents.summary.total.toLocaleString() }} </td>
                     </tr>
                 </tbody>
             </table>
@@ -87,11 +87,10 @@
 
         <ul>
             <li>振込先</li>
-            <li>名義：ユ）ミライキカク</li>
-            <li>沖縄銀行 〇〇支店 普通 00000000</li>
+            <li>名義：{{ contents.bank.account }}</li>
+            <li>{{ contents.bank.name }} {{ contents.bank.branch }} {{ contents.bank.type }} {{ contents.bank.account_number }}</li>
         </ul>
         <p>※お振込み手数料は御社ご負担にてお願い致します。</p>
-
     </section>
 </template>
 
@@ -133,10 +132,22 @@ export default {
           {'name': '金額', 'width': '18%'},
         ],
         'items': [
-          {'name': '上納金', 'unit_price': '40000', 'amount': '1', 'sub_total': '40000'},
-          {'name': '手ぬぐい', 'unit_price': '3000', 'amount': '3', 'sub_total': '9000'},
-          {'name': '湯呑', 'unit_price': '1000000', 'amount': '1', 'sub_total': '1000000'},
-        ]
+          {'name': '上納金', 'unit_price': 40000, 'amount': 1, 'sub_total': 40000},
+          {'name': '手ぬぐい', 'unit_price': 3000, 'amount': 3, 'sub_total': 9000},
+          {'name': '湯呑', 'unit_price': 1000000, 'amount': 1, 'sub_total': 1000000},
+        ],
+        'summary': {
+          'sub_total_sum': 1049000,
+          'tax': 10490,
+          'total': 1059490,
+        },
+        'bank': {
+          'account': 'ユ）ミライキカク',
+          'name': '沖縄銀行',
+          'branch': '〇〇支店',
+          'type': '普通',
+          'account_number': '00000000',
+        }
       }
     }
   },
