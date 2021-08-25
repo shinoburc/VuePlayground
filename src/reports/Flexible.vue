@@ -43,7 +43,7 @@
                 <tbody>
                     <tr>
                         <th>合計金額</th>
-                        <td>\{{ contents.summary.total.toLocaleString() }}</td>
+                        <td>{{ contents.summary.total.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' }) }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -61,9 +61,9 @@
                 <tbody>
                     <tr v-for="item in contents.items" :key="item.name" class="dataline">
                         <td class="text-left"> {{ item.name }}</td>
-                        <td> {{ item.unit_price.toLocaleString() }} </td>
+                        <td> {{ item.unit_price.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' }) }} </td>
                         <td> {{ item.amount }} </td>
-                        <td> {{ item.sub_total.toLocaleString() }} </td>
+                        <td> {{ item.sub_total.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' }) }} </td>
                     </tr>
                     <tr v-for="dummy_rows of (14 - contents.items.length)" :key="dummy_rows" class="dataline">
                         <td v-for="dummy_cols of contents.headers.length" :key="dummy_cols"/>
@@ -71,15 +71,15 @@
                     <tr>
                         <td class="space" rowspan="3" colspan="2"> </td>
                         <th> 小計 </th>
-                        <td> {{ contents.summary.sub_total_sum.toLocaleString() }} </td>
+                        <td> {{ contents.summary.sub_total_sum.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' }) }} </td>
                     </tr>
                     <tr>
                         <th> 消費税 </th>
-                        <td> {{ contents.summary.tax.toLocaleString() }} </td>
+                        <td> {{ contents.summary.tax.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' }) }} </td>
                     </tr>
                     <tr>
                         <th> 合計 </th>
-                        <td> {{ contents.summary.total.toLocaleString() }} </td>
+                        <td> {{ contents.summary.total.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' }) }} </td>
                     </tr>
                 </tbody>
             </table>
