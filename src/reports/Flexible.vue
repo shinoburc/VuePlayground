@@ -71,7 +71,7 @@
                     <tr>
                         <td class="space" rowspan="3" colspan="2"> </td>
                         <th> 小計 </th>
-                        <td> {{ contents.summary.sub_total_sum.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' }) }} </td>
+                        <td> {{ calculate_sub_total_sum(contents.items).toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' }) }} </td>
                     </tr>
                     <tr>
                         <th> 消費税 </th>
@@ -106,6 +106,14 @@ export default {
       style.innerHTML = `@page {size: A4}`;
     document.head.appendChild(style);
 
+    const calculate_sub_total_sum = (items: Array<any>): number => {
+      let total = 0;
+      items.forEach(item => {
+        total += item.sub_total;
+      });
+      return total;
+    };
+
     const contents = { 
         'name': '御請求書',
         'no': '00-0001',
@@ -135,11 +143,12 @@ export default {
           {'name': '上納金', 'unit_price': 40000, 'amount': 1, 'sub_total': 40000},
           {'name': '手ぬぐい', 'unit_price': 3000, 'amount': 3, 'sub_total': 9000},
           {'name': '湯呑', 'unit_price': 1000000, 'amount': 1, 'sub_total': 1000000},
+          {'name': '扇子', 'unit_price': 30000, 'amount': 1, 'sub_total': 30000},
         ],
         'summary': {
-          'sub_total_sum': 1049000,
-          'tax': 10490,
-          'total': 1059490,
+          'sub_total_sum': 0,
+          'tax': 0,
+          'total': 0,
         },
         'bank': {
           'account': 'ユ）ミライキカク',
@@ -149,8 +158,13 @@ export default {
           'account_number': '00000000',
         }
       }
+      contents.summary.sub_total_sum = calculate_sub_total_sum(contents.items);
+      contents.summary.tax = contents.summary.sub_total_sum / (10);
+      contents.summary.total = contents.summary.sub_total_sum + contents.summary.tax;
+
       return {
-        contents
+        contents,
+        calculate_sub_total_sum
       }
 
   },
