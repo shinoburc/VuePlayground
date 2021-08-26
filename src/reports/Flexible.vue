@@ -31,7 +31,7 @@
                     <li>TEL: {{ contents.from.tel }}</li>
                     <li>FAX: {{ contents.from.fax }}</li>
                 </ul>
-                <img class="stamp" src="report/tatekawa-black.png">
+                <img v-if="contents.from.display_stamp" class="stamp" :src="contents.from.stamp_path">
             </div>
             <div class="clear-element"></div>
         </div>
@@ -105,17 +105,15 @@ export default {
     const style = document.createElement('style');
       style.innerHTML = `@page {size: A4}`;
     document.head.appendChild(style);
-  },
-  data() {
-    return {
-      contents: { 
+
+    const contents = { 
         'name': '御請求書',
         'no': '00-0001',
         'date': '2021年8月20日',
         'to': {
           'name': '有限会社 未来企画',
           'postal_code': '000-0000',
-          'address': '沖縄県那覇市首里'
+          'address': '沖縄県那覇市首里',
         },
         'from': {
           'name': '雲黒斎家元勝手居士',
@@ -123,7 +121,9 @@ export default {
           'address': '東京都文京区向丘2-17-4',
           'building': '浄心寺',
           'tel': '00-0000-0000',
-          'fax': '00-0000-0000'
+          'fax': '00-0000-0000',
+          'display_stamp': true,
+          'stamp_path': 'report/tatekawa-black.png',
         },
         'headers': [
           {'name': '品名', 'width': '50%'},
@@ -149,7 +149,17 @@ export default {
           'account_number': '00000000',
         }
       }
+      return {
+        contents
+      }
+
+  },
+  data() {
+    return {
     }
+  },
+  calculate_summary: function() {
+    return true
   },
   components: {
   }
