@@ -53,17 +53,17 @@
             <table class="detail">
                 <thead>
                     <tr>
-                        <th v-for="header in contents.headers" :key="header.name" :style="{width: header.width }">
-                            {{ header.name }}
+                        <th v-for="header in contents.headers" :key="header.logical_name" :style="header.style">
+                            {{ header.logical_name }}
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="item in contents.items" :key="item.name" class="dataline">
-                        <td class="text-left"> {{ item.name }}</td>
-                        <td> {{ item.unit_price.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' }) }} </td>
-                        <td> {{ item.amount }} </td>
-                        <td> {{ item.sub_total.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' }) }} </td>
+                      <!-- for each items physical_name -->
+                      <td v-for="header in contents.headers" :key="header.physical_name" :style="header.item_style">
+                        {{ item[header.physical_name] }}
+                      </td>
                     </tr>
                     <tr v-for="dummy_rows of (14 - contents.items.length)" :key="dummy_rows" class="dataline">
                         <td v-for="dummy_cols of contents.headers.length" :key="dummy_cols"/>
@@ -131,19 +131,59 @@ export default {
           'tel': '00-0000-0000',
           'fax': '00-0000-0000',
           'display_stamp': true,
-          'stamp_path': 'report/tatekawa-black.png',
+          'stamp_path': require('@/assets/report/tatekawa-black.png'),
         },
         'headers': [
-          {'name': '品名', 'width': '50%'},
-          {'name': '単価', 'width': '18%'},
-          {'name': '数量', 'width': '14%'},
-          {'name': '金額', 'width': '18%'},
+          {
+            'logical_name': '品名', 
+            'physical_name': 'name', 
+            'style': {'width': '50%', 'text-align': 'center'},
+            'item_style': {'text-align': 'left'},
+          },
+          {
+            'logical_name': '単価', 
+            'physical_name': 'unit_price', 
+            'style': {'width': '18%', 'text-align': 'center'},
+            'item_style': {},
+          },
+          {
+            'logical_name': '数量', 
+            'physical_name': 'amount', 
+            'style': {'width': '14%', 'text-align': 'center'},
+            'item_style': {},
+          },
+          {
+            'logical_name': '金額', 
+            'physical_name': 'sub_total', 
+            'style': {'width': '18%', 'text-align': 'center'},
+            'item_style': {},
+          },
         ],
         'items': [
-          {'name': '上納金', 'unit_price': 40000, 'amount': 1, 'sub_total': 40000},
-          {'name': '手ぬぐい', 'unit_price': 3000, 'amount': 3, 'sub_total': 9000},
-          {'name': '湯呑', 'unit_price': 1000000, 'amount': 1, 'sub_total': 1000000},
-          {'name': '扇子', 'unit_price': 30000, 'amount': 1, 'sub_total': 30000},
+          {
+            'name': '上納金', 
+            'unit_price': 40000, 
+            'amount': 1, 
+            'sub_total': 40000
+          },
+          {
+            'name': '手ぬぐい', 
+            'unit_price': 3000, 
+            'amount': 3, 
+            'sub_total': 9000
+          },
+          {
+            'name': '湯呑', 
+            'unit_price': 1000000, 
+            'amount': 1, 
+            'sub_total': 1000000
+          },
+          {
+            'name': '扇子', 
+            'unit_price': 30000, 
+            'amount': 1, 
+            'sub_total': 30000
+          },
         ],
         'summary': {
           'sub_total_sum': 0,
